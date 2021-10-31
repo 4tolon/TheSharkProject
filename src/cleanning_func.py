@@ -22,43 +22,45 @@ def RAS_the_one_and_only_one_cell_output_analisys_program(data):
     col_list = list(data.columns)
     data_shape = data.shape
     a = cf.dic_list(col_list)  #Frist function defined in this file
+    new_a = []
     for i in range(len(a)):
         # Information variables about each column
         null = data[a[i]].isna().sum()
         lenn = len(data[a[i]])
-        uniq = data[a[i]].unique()
-        uniq_show = []
-        if len(list(uniq))> 10:
-            unip_show = list(uniq)[::10]
-        else:
-            unip_show = uniq 
+        null_percent = round((null/lenn*100), 1)
+        #uniq = data[a[i]].unique()
+        #uniq_show = []
+        #if len(list(uniq))> 10:
+        #    unip_show = list(uniq)[::10]
+        #else:
+        #    unip_show = uniq 
         # Prints staments using var to do some kind of menu
-        print(f'In this position {i} of {len(a)} the column name is   \b"{a[i]}"')
+        #print(f'In this position {i} of {len(a)} the column name is   \b"{a[i]}"')
         print('-----------SOME DATA TO HELP-----------')
         print(f'Number of rows : {data_shape[0]}')
-        print(f'Number nam/nul : {null} thats the {round((null/lenn*100), 1)} %')
-        print(f'Number uniques : {len(uniq)} some of them are: {uniq_show}')
+        print(f'Number nam/nul : {null} thats the {null_percent} %')
+        #print(f'Number uniques : {len(uniq)} some of them are: {uniq_show}')
         # Input stament
         b = (input(f"Enter a new value:\nor skip to next by pressing enter\ntype 'del' to show next function to drop this column\n\n\n\n\b'{a[i]}'"))
         # Loops for mange the unmodified and refreshing the output
         if b == '':
+            new_a.append(a[i])
             True
             clear_output(wait = True)
-            False
+            #False
             continue
         else:
-            a[i] = b
+            new_a.append(b)
             True
             clear_output(wait = True)
-            False
-        True
-        clear_output(wait = True)
-        False
-
-    print(i,'<->', b)
+            #False
+        #True
+        #clear_output(wait = True)
+        #False
     print(a)
+    print(new_a)
     print('Pass the result of this function as arg** of  \bdel_col(arg) to drop "\bdel" tagged columns')
-    return a
+    return new_a
 
 def del_col(data_to_clean):
     """
