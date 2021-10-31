@@ -17,8 +17,8 @@ def RAS_the_one_and_only_one_cell_output_analisys_program(data):
     """
     import pandas as pds
     from IPython.display import clear_output
-
     from src import cleanning_func as cf
+    import time 
     col_list = list(data.columns)
     data_shape = data.shape
     a = cf.dic_list(col_list)  #Frist function defined in this file
@@ -28,39 +28,32 @@ def RAS_the_one_and_only_one_cell_output_analisys_program(data):
         null = data[a[i]].isna().sum()
         lenn = len(data[a[i]])
         null_percent = round((null/lenn*100), 1)
-        #uniq = data[a[i]].unique()
-        #uniq_show = []
-        #if len(list(uniq))> 10:
-        #    unip_show = list(uniq)[::10]
-        #else:
-        #    unip_show = uniq 
-        # Prints staments using var to do some kind of menu
-        #print(f'In this position {i} of {len(a)} the column name is   \b"{a[i]}"')
+        uniq = data[a[i]].unique()[:3]
         print('-----------SOME DATA TO HELP-----------')
+        print(f'Column index   : {1} of {len(a)}')
         print(f'Number of rows : {data_shape[0]}')
         print(f'Number nam/nul : {null} thats the {null_percent} %')
+        print(f'Example unique : {uniq}')
         #print(f'Number uniques : {len(uniq)} some of them are: {uniq_show}')
         # Input stament
         b = (input(f"Enter a new value:\nor skip to next by pressing enter\ntype 'del' to show next function to drop this column\n\n\n\n\b'{a[i]}'"))
         # Loops for mange the unmodified and refreshing the output
         if b == '':
             new_a.append(a[i])
-            True
+            time.sleep(0.2)
             clear_output(wait = True)
-            #False
             continue
         else:
             new_a.append(b)
-            True
+            time.sleep(0.2)
             clear_output(wait = True)
-            #False
-        #True
-        #clear_output(wait = True)
-        #False
-    print(a)
-    print(new_a)
-    print('Pass the result of this function as arg** of  \bdel_col(arg) to drop "\bdel" tagged columns')
-    return new_a
+    # Creation of the new dataframe
+    df = data.set_axis(new_a, axis=1)
+    # Delete the columns name as "del"
+    del df['del']
+    # Delete all rows with at least 4 Nan
+    df.dropna(axis=0, how='all',thresh=4, inplace = True)
+    return df
 
 def del_col(data_to_clean):
     """
