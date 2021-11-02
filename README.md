@@ -40,7 +40,7 @@ Creacion de funciones de limpieza y manipulacion. Gestion visual del proceso gra
 ### 2. Evolcion temporal de los encuentros por invasion de persona en el medio, mirada especial a las mujeres.
 ### 3. La fama del tiburon blanco.
 
-![image](https://github.com/4tolon/TheSharkProject/tree/main/Images/ojo.gif)
+![](Images/ojo.gif)
 
 ## Versionado 📌
 
