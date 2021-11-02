@@ -3,6 +3,24 @@
 # Libraries 
 import pandas as pd
 
+def cambia(x):
+    if x == "man":
+        return "H"
+    else:
+        return "M"
+
+
+
+def word_dan(colu,lista,replace):
+    """
+    This function gets a column of dataframe a list of words to chage and a replace value to ,
+    and values the list items.
+    """ 
+    for palabra in lista:
+            regular = ".*["+ letra[0].upper() + letra[0].lower()+"]("+ letra[1].upper()+"|"+letra[1:-1].lower()+").*"
+    return colu.str.replace(f"{regular}",f"S{replace}",regex = True)
+
+
 def dic_list(values):
     """
     This function gets a list and returns a dictionarie with keys as index of list,
