@@ -33,7 +33,7 @@ Creacion de funciones de limpieza y manipulacion. Gestion visual del proceso gra
 ## Hipotesis en base a los datos para visualizar 🖇️
 
 ### 1. La juventud es carne.
-### 2. Evolcion temporal de los encuentros por invasion de persona en el medio, mirada especial a las mujeres.
+### 2. Evolucion temporal de los encuentros por invasion de personas en el medio, mirada especial a las mujeres.
 ### 3. La fama del tiburon blanco.
 
 ![](Images/ojo.gif)
