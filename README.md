@@ -1,6 +1,8 @@
 # TheSharkProject
 
 ![](Images/loading.gif)
+
+
 Un ejecicio de mejora de manejo de pandas y de herramientas de visualizacion 
 
 ## Comenzando 🚀
