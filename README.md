@@ -1,6 +1,6 @@
 # TheSharkProject
 
-![image](https://github.com/4tolon/TheSharkProject/tree/main/Images/loading.gif)
+![](Images/loading.gif)
 Un ejecicio de mejora de manejo de pandas y de herramientas de visualizacion 
 
 ## Comenzando 🚀
