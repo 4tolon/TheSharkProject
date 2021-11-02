@@ -7,11 +7,6 @@ Un ejecicio de mejora de manejo de pandas y de herramientas de visualizacion
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
-
 ### Pre-requisitos 📋
 
 pip y conda son vuestros amigos, necesitareis alguna que otra libreria.
@@ -29,7 +24,6 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import re
 import missingno as msno
 ```
-
 
 ## Objetivo de limpieza y manipulacion de datos con pandas 📦
 
